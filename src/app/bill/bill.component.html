@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-menu-button style="color: #fff;"></ion-menu-button>
+        </ion-buttons>
+        <ion-title style="background-color: #f88e7c">
+            Shopping List
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-row>
+        <ion-list>
+            <ion-item *ngFor="let ing of ingredients">
+                {{ ing.name }} - {{ ing.amount}} ({{ ing.unit}})
+            </ion-item>
+        </ion-list>
+    </ion-row>
+    <ion-row>
+        <h2>Total : {{price}}</h2>
+    </ion-row>
+    <ion-row>
+        <button class="btn btn-lg btn-block" style="background-color: #f88e7c" (click)="buynow()">Buy now</button>
+    </ion-row>
+</ion-content>

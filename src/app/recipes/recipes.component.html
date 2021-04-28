@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-buttons slot="start">
+            <ion-menu-button style="color: #fff;"></ion-menu-button>
+        </ion-buttons>
+        <ion-title style="color: #fff; padding-left:35%">
+            Recipes
+        </ion-title>
+
+        <ion-buttons slot="end">
+            <ion-button style="color: #fff;" (click)="onNewRecipe()">
+                <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <!--         <a routerLink="new" style="background-color:#f88e7c; width:50px; height:auto;" slot="end">Create + </a>
+ --></ion-toolbar>
+</ion-header>
+
+<ion-content id="grad">
+    <div class="back">
+        <!-- <div class="styling">
+                <ion-label style="text-align: center; font-size: 20px;">User : {{ email }}</ion-label>
+            </div> -->
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</ion-content>

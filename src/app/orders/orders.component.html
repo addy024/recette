@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-buttons slot="start">
+            <ion-menu-button style="color: #fff;"></ion-menu-button>
+        </ion-buttons>
+        <ion-title style="color: #fff; padding-left:35%">
+            Orders
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <button class="btn btn-block" style="background-color: #f88e7c; color:#fff; padding:auto;" (click)="go()">Pending Payments : <ion-badge slot="end" color="dark">{{count}}</ion-badge> </button>
+    <ion-card padding>
+        <h1>Orders</h1>
+
+        <!-- <div *ngFor="let id of ordersID;let i=i ndex ">
+            <a (click)="hit(i) " *ngIf="orderDetail[i][4]=='pending' ">
+                <p>{{id}}</p>
+            </a>
+        </div> -->
+
+        <ul class="list-group " style="margin: auto; ">
+            <div *ngFor="let id of ordersID;let i = index ">
+                <li class="list-group-item " style="background-color: rgba(220, 230, 252, 0.85); " *ngIf="orderDetail[i][4]=='pending' ">
+                    <a (click)="hit(i) ">
+                        <p>{{id}}</p>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </ion-card>
+
+
+    <br>
+    <hr>
+    <ion-card padding>
+        <div *ngIf="selected ">
+            <h1>{{id}}</h1>
+            <b>Ordered by :</b>
+            <h4>{{emailId}}</h4>
+            <b>Address : </b>
+            <p>{{address}}</p>
+            <br>
+            <b>Email : </b>
+            <p>{{email}}</p>
+            <br>
+            <b>Mobile Number : </b>
+            <p>{{mobileno}}</p>
+            <br>
+            <b>Name : </b>
+            <p>{{name}}</p>
+
+            <h3>Ingredients : </h3>
+            <div *ngFor="let ing of ingredient ">
+                <h5>{{ing.amount}} - {{ing.name}} - {{ing.unit}}</h5>
+            </div>
+            <br>
+            <h3>Status : {{status}}</h3>
+            <br>
+            <h3>Price :- {{price}}</h3>
+            <button class="btn btn-block " style="background-color: #f88e7c; " (click)=change(id)>Delievered</button>
+        </div>
+    </ion-card>
+</ion-content>

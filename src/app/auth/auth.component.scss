@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background: #eee;
+    color: #666;
+}
+
+.login-container {
+    height: 100vh;
+    width: 100%;
+}
+
+.login-form {
+    margin: auto;
+    width: 370px;
+    padding: 15px;
+    max-width: 100%;
+}
+
+.login-form .form-control {
+    font-size: 15px;
+    min-height: 48px;
+    font-weight: 500;
+}
+
+.login-form a {
+    text-decoration: none;
+    color: #666;
+}
+
+.login-form a:hover {
+    color: rgba(248, 142, 124, 0.7);
+}
+
+.forgot-link {
+    font-size: 13px;
+}
+
+.form-control:focus {
+    border-color: rgba(248, 142, 124, 0.7);
+    box-shadow: 0 0 0 0.2rem rgba(248, 142, 124, 0.7);
+}
+
+.btn-custom {
+    background: #f88e7c;
+    border-color: rgba(248, 142, 124, 0.7);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    min-height: 48px;
+}
+
+.btn-custom:focus,
+.btn-custom:hover,
+.btn-custom:active,
+.btn-custom:active:focus {
+    background: #f88e7c;
+    border-color: #f88e7c;
+    color: #fff;
+}
+
+.btn-custom:focus {
+    box-shadow: 0 0 0 0.2rem rgba(248, 142, 124, 0.7);
+}
+
+.new-background-color {
+    --background: #f88e7c;
+}
+
+
+/*
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    position: relative;
+}
+
+body {
+    background: #fcfcfc;
+    height: 100%;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+}
+
+ion-content {
+    height: 100%;
+}
+
+.containar {
+    margin: 0px auto;
+    padding: 0;
+}
+
+.app {
+    background: #fff;
+    min-height: 640px;
+    box-shadow: inset 20px 0px 0px rgba(244, 215, 66, 0.3);
+    background: transparent;
+}
+
+.page-heading {
+    font-size: 2em;
+    margin: 0px 0 5px 30px;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: -2px;
+    text-shadow: #f0f0f0 2px 2px 0;
+    border-bottom: 1px solid #555;
+    line-height: 40px;
+}
+
+.page-heading span {
+    border-bottom: 3px solid #ead109;
+    display: inline-block;
+    margin: 0 0 -2px 0;
+    padding: 5px 3px;
+}
+
+.page-heading i {
+    float: right;
+    padding: 10px;
+}
+
+.login-container {
+    background: transparent;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+}
+
+.login-container h4 {
+    font-size: 1.4em;
+    margin: 10px 0 85px 30px;
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-shadow: #f0f0f0 2px 2px 0;
+}
+
+.login-container .form-Control {
+    position: relative;
+}
+
+.login-container .form-Control input {
+    width: 60%;
+    padding: 15px 0 10px 25px;
+    letter-spacing: 1px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #555;
+    border: 1px solid rgba(244, 215, 66, 1);
+    border-left: 0px;
+    outline: none;
+    background: rgba(244, 215, 66, 0.6);
+}
+
+.login-container .form-Control input.username {
+    border-top-right-radius: 50px;
+    border-bottom: 0px;
+}
+
+.login-container .form-Control input.password {
+    border-bottom-right-radius: 50px;
+    border-top: 0px;
+}
+
+.login-container .form-Control input:focus {
+    background: rgba(244, 215, 66, 0.3);
+}
+
+.button-submit {
+    position: absolute;
+    top: 152px;
+    right: 10px;
+    border: 1px solid rgba(244, 215, 66, 1);
+    background: rgba(244, 215, 66, 0.7);
+    width: 100px;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 20%;
+    box-shadow: 4px 4px #f4c141;
+    color: #555;
+}
+
+.button-submit:hover {
+    box-shadow: 4px 4px #d1a740;
+    color: #fff;
+}
+
+.shape-circle {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    background: rgba(244, 215, 66, 0.5);
+    width: 180px;
+    height: 160px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+} */

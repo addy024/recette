@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-buttons slot="start">
+            <ion-menu-button style="color: #fff;"></ion-menu-button>
+        </ion-buttons>
+        <ion-title style="color: #fff; padding-left:35%">
+            User
+        </ion-title>
+
+        <ion-buttons slot="end">
+            <ion-button style="color: #fff;" (click)="onNewRecipe()">
+                <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <!--         <a routerLink="new" style="background-color:#f88e7c; width:50px; height:auto;" slot="end">Create + </a>
+ --></ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card style="height: 90%;" padding>
+        <h3 style="margin: 5px; text-align: center;">User Info : {{currentUser}}</h3>
+        <hr>
+        <div *ngIf="!admin">
+
+
+            <h4 style="text-align: center;">Amount : $ {{amount}}</h4>
+            <button class="btn btn-block" [disabled]="check" style="background-color: #f88e7c; color:#fff" (click)="navigate()">WITHDRAW</button>
+
+        </div>
+        <hr>
+        <h3 style="margin: 5px; text-align:center;">User's Recipe's List :</h3>
+        <ul class="list-group" style="margin: auto;" *ngFor="let recipe of recipes; let i = index">
+
+            <li class="list-group-item" style="background-color:  rgba(220, 230, 252, 0.85); text-align:center;" *ngIf="currentUser == recipe.userName">
+                <a [routerLink]="['/recipes',i]">{{ recipe.name }}</a>
+            </li>
+        </ul>
+    </ion-card>
+</ion-content>

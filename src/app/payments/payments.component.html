@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-buttons slot="start">
+            <ion-menu-button style="color: #fff;"></ion-menu-button>
+        </ion-buttons>
+        <ion-title style="color: #fff; padding-left:35%">
+            Payments
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <ion-card padding>
+        <h1>Payments :</h1>
+        <ul class="list-group" style="margin: auto;">
+            <div *ngFor="let pay of pays; let i = index">
+                <li class="list-group-item" *ngIf="pay[2] == 'pending'" style="background-color:  rgba(220, 230, 252, 0.85); text-align:center;">
+                    <p>User : {{pay[0]}}</p>
+                    <p>Acc no : {{pay[1]}} </p>
+                    <p>Status : {{pay[2]}}</p>
+                    <button class="btn btn-block" style="background-color: #f88e7c; color :white" (click)="paying(i)">Pay</button>
+                </li>
+            </div>
+        </ul>
+    </ion-card>
+
+</ion-content>

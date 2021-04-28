@@ -1,0 +1,32 @@
+<ion-header style="background-color: rgba(244, 215, 66, 1)">
+    <ion-toolbar class="new-background-color">
+        <ion-buttons slot="start">
+            <ion-menu-button style="color: #fff;"></ion-menu-button>
+        </ion-buttons>
+        <ion-title style="color: #fff;">
+            Auth
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+
+
+    <div padding class="d-flex justify-content-center align-items-center login-container">
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading" class="login-form text-center">
+            <h1 class="mb-5 font-weight-light text-uppercase">{{ isLoginMode ? 'Login' : 'Sign Up' }}</h1>
+            <div class="form-group">
+                <input ngModel name="email" required email type="text" class="form-control rounded-pill form-control-lg" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input ngModel name="password" required minlength="6" type="password" class="form-control rounded-pill form-control-lg" placeholder="Password">
+            </div>
+            <button type="submit" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase" [disabled]="!authForm.valid">{{ isLoginMode ? 'Login' : 'Sign Up' }}</button>
+            <p class="mt-3 font-weight-normal">Switch to <a href="javascript:void(0)" (click)="onSwitchMode()"><strong> {{ isLoginMode ? 'Sign Up' : 'Login' }}</strong></a></p>
+        </form>
+    </div>
+
+
+</ion-content>

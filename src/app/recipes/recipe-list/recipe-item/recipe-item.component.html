@@ -1,0 +1,22 @@
+<div style="padding-left: 20%; justify-content:center; text-align:center;" class="col-12 align-middle container" id="fda_product_tile">
+    <div class="row fda_food_row">
+        <div class="col-9">
+            <div class="food_tile active">
+                <img class="fda_product_img" src="{{recipe.image}}" alt="">
+                <span class="food_name">{{recipe.name}}</span>
+                <span class="food_detail text">{{recipe.description}}</span>
+                <ul id="food_meta">
+                    <li>
+                        Ingredients
+                        <span>{{ingredientAmount}}</span>
+                    </li>
+                    <li>
+                        Steps
+                        <span><i class="fa fa-inr"></i> {{StepsCount}}</span>
+                    </li>
+                </ul>
+                <button class="btn btn-sm btn-default" type="button" [routerLink]=[index]>View</button>
+            </div>
+        </div>
+    </div>
+</div>

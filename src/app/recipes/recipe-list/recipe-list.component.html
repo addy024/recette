@@ -1,0 +1,37 @@
+<br>
+
+<button class="btn btn-block" type="button" (click)="toogle()">Filter</button>
+
+
+
+<div padding style="background-color:  rgba(220, 230, 252, 0.85);" *ngIf="show" class="card card-content-ios filterShow">
+    <div>
+        <ion-label><b>Category </b></ion-label>
+        <ion-select [ngModel]="selectedCategory" (ngModelChange)="onChange($event)" value="Veg" name="category" interface="action-sheet">
+            <ion-select-option value="Veg">Veg</ion-select-option>
+            <ion-select-option value="Non-Veg">Non-Veg</ion-select-option>
+        </ion-select>
+    </div>
+    <div>
+        <ion-label><b>Region</b></ion-label>
+        <ion-select [ngModel]="selectedRegion" (ngModelChange)="onChangeRegion($event)" value="foreign" name="region" interface="action-sheet">
+            <ion-select-option value="maharashtrian">Maharashtrian</ion-select-option>
+            <ion-select-option value="gujarati">Gujarati</ion-select-option>
+            <ion-select-option value="punjabi">Punjabi</ion-select-option>
+            <ion-select-option value="chinese">Chinese</ion-select-option>
+            <ion-select-option value="foreign">Foreign</ion-select-option>
+        </ion-select>
+    </div>
+</div>
+
+
+
+
+<ion-list>
+
+
+    <ng-container *ngFor="let recipe of recipes; let i = index">
+        <app-recipe-item [recipe]="recipe" [index]="i" *ngIf="recipe.category == selectedCategory && recipe.region == selectedRegion"></app-recipe-item>
+    </ng-container>
+
+</ion-list>

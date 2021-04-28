@@ -1,0 +1,25 @@
+button {
+    display: block;
+    width: 260px;
+    height: 40px;
+    background: #f88e7c;
+    border-radius: 10px;
+    margin: auto;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+
+.filterShow {
+    width: 260px;
+    margin: auto;
+}
+
+@media screen and (min-width: 480px) {
+    ion-list {
+        padding: 0 33%;
+        text-align: center;
+    }
+}

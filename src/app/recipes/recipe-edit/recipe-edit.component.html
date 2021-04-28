@@ -1,0 +1,138 @@
+<ion-card padding>
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+
+        <div style="display: block;">
+            <button class="btn btn-block btn-custom" style="background-color: #f88e7c;" type="submit" [disabled]="!recipeForm.valid">Save</button>
+            <button class="btn btn-block btn-custom" style="background-color: #f88e7c;" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+
+        <br>
+
+
+        <div class="form-group">
+            <input type="text" class="form-control rounded-pill form-control-lg" placeholder="@name " formControlName="name" name="name">
+        </div>
+
+
+
+        <div class="form-group">
+            <input type="text" name="image" formControlName="image" #image placeholder="@imageUrl" class="form-control rounded-pill form-control-lg">
+        </div>
+
+
+
+        <div class="form-group">
+            <input type="text" name="video" formControlName="video" #video placeholder="@videoUrl" class="form-control rounded-pill form-control-lg">
+        </div>
+
+        <ng-container *ngIf="image.value != ''">
+            <ion-img [src]="image.value"></ion-img>
+        </ng-container>
+
+
+
+        <div class="form-group">
+            <textarea type="text" name="description" formControlName="description" placeholder="@description" class="form-control rounded-pill form-control-lg"></textarea>
+        </div>
+
+
+
+        <div class="form-group">
+            <ion-label position="stacked">Owner : </ion-label>
+            <input type="text" formControlName="userName" required name="userName" class="form-control rounded-pill form-control-lg">
+        </div>
+
+        <br>
+        <div class="row">
+            <ion-label class="col-5"><b>Category</b></ion-label>
+            <ion-select class="col-7" formControlName="category" name="category" interface="action-sheet">
+                <ion-select-option value="Veg">Veg</ion-select-option>
+                <ion-select-option value="Non-Veg">Non-Veg</ion-select-option>
+            </ion-select>
+        </div>
+
+
+
+        <div class="row">
+            <ion-label class="col-5"><b>Region</b></ion-label>
+            <ion-select class="col-7" formControlName="region" name="region" interface="action-sheet">
+                <ion-select-option value="maharashtrian">Maharashtrian</ion-select-option>
+                <ion-select-option value="gujarati">Gujarati</ion-select-option>
+                <ion-select-option value="punjabi">Punjabi</ion-select-option>
+                <ion-select-option value="chinese">Chinese</ion-select-option>
+                <ion-select-option value="foreign">Foreign</ion-select-option>
+            </ion-select>
+        </div>
+
+
+        <div>
+
+            <div style="text-align: center;">
+                <h4 style="margin: 2px;">Ingredients :</h4>
+            </div>
+
+            <ion-row formArrayName="ingredients" padding>
+                <div *ngFor="let ingCtrl of controls; let i = index" [formGroupName]="i">
+
+                    <div class="form-group">
+                        <input type="text" formControlName="name" placeholder="@Ingredient name" class="form-control rounded-pill form-control-lg">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" formControlName="amount" placeholder="@Ingredient amount" class="form-control rounded-pill form-control-lg">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" formControlName="unit" placeholder="@Ingredient unit" class="form-control rounded-pill form-control-lg">
+                    </div>
+
+                    <br>
+                    <div width="100%">
+
+                        <button class="btn btn-block btn-custom" type="button" style="background-color: #f88e7c;" (click)="onDeleteIngredient(i)">Delete</button>
+
+                    </div>
+                </div>
+
+
+            </ion-row>
+            <div style="padding-top: 0;" width="100%">
+                <br>
+                <button width="100%" class="btn btn-block btn-custom" style="background-color: #f88e7c;" type="button" (click)="onAddIngredient()">Add Ingredient</button>
+            </div>
+
+
+        </div>
+        <div>
+            <div style="text-align: center;">
+                <h4 style="margin: 2px;"> Steps :</h4>
+            </div>
+
+            <ion-row formArrayName="steps" padding>
+                <div *ngFor="let stepCtrl of control; let i = index" [formGroupName]="i">
+
+
+
+                    <div class="form-group">
+                        <input type="number" formControlName="stepNo" placeholder="No." class="form-control rounded-pill form-control-lg">
+                    </div>
+                    <div class=" form-group">
+                        <textarea type="text" formControlName="stepDesc" placeholder="@Step Desc" class="form-control rounded-pill form-control-lg"></textarea>
+                    </div>
+                    <br>
+
+
+                    <div>
+                        <button class="btn btn-block btn-custom" type="button" style="background-color: #f88e7c;" (click)="onDeleteStep(i)">Delete</button>
+                    </div>
+                </div>
+            </ion-row>
+
+            <div width="100%">
+                <button width="100%" class="btn btn-block btn-custom" style="background-color: #f88e7c;" type="button" (click)="onAddStep()">Add Step</button>
+            </div>
+
+
+        </div>
+    </form>
+</ion-card>

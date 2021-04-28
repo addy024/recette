@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-menu-button style="color: #fff;"></ion-menu-button>
+        </ion-buttons>
+        <ion-title style="background-color: #f88e7c">
+            Billing
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <ion-card>
+        <ion-card-header style="text-align: center;">
+            <h1>Info</h1>
+        </ion-card-header>
+        <ion-card-content>
+            <form (ngSubmit)="success(f)" #f="ngForm">
+               
+                <ion-row>
+                    <ion-item style="width: 100%;">
+                        <ion-label position="floating">Name : </ion-label>
+                        <ion-input type="text" name="name" ngModel required></ion-input>
+                    </ion-item>
+                </ion-row>
+                
+                <ion-row>
+                    <ion-item style="width: 100%;">
+                        <ion-label position="floating">Address : </ion-label>
+                        <ion-textarea type="text" name="address" ngModel required></ion-textarea>
+                    </ion-item>
+                </ion-row>
+                
+                <ion-row>
+                    <ion-item style="width: 100%;">
+                        <ion-label position="floating">Email : </ion-label>
+                        <ion-input type="email" name="email" ngModel required></ion-input>
+                    </ion-item>
+                </ion-row>
+               
+                <ion-row>
+                    <ion-item style="width: 100%;">
+                        <ion-label position="floating">Mobile No : </ion-label>
+                        <ion-input type="number" name="mobile" minlength="10" ngModel required></ion-input>
+                    </ion-item>
+                </ion-row>
+                <br>
+                <ion-row>
+                    <button class="btn btn-lg btn-block" style="background-color: #f88e7c; color:#fff;" type="button" (click)="pay()"> Card Payment </button>
+
+                </ion-row>
+                <br>
+                <ng-container>
+                    <button class="btn btn-lg btn-block" style="background-color: #f88e7c" type="submit"> Proceed </button>
+                </ng-container>
+
+            </form>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

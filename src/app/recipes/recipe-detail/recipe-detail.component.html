@@ -1,0 +1,79 @@
+<ion-card padding style="background: white;">
+    <div style="background-color: #f88e7c; padding:5px;">
+        <h1 style="text-align: center;">
+            {{recipe.name}}
+        </h1>
+    </div>
+
+
+    <br>
+
+    <div style="align-content: center; text-align:center;">
+        <iframe width="100%" height="auto" [src]="recipe.video | safe: 'resourceUrl'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="styling-detail" style="background-color:  rgba(220, 230, 252, 0.85); text-align:center;">
+        <p><b>Category :</b> {{recipe.category}}</p>
+
+        <p><b>Region :</b> {{recipe.region}}</p>
+
+    </div>
+
+    <div style="background-color:  rgba(220, 230, 252, 0.85); text-align:center;">
+        <h3>
+            Description :
+        </h3>
+        <p>{{recipe.description}}</p>
+    </div>
+
+    <div style="background-color:  rgba(220, 230, 252, 0.85); text-align:center">
+        <h3>
+            Ingredients :
+        </h3>
+
+        <ul class="list-group">
+            <li style="font-size:medium;" class="list-group-item " style="background-color:  rgba(220, 230, 252, 0.85);" *ngFor="let ing of recipe.ingredients">
+                {{ing.name }} - {{ing.amount}} ({{ing.unit}})
+            </li>
+        </ul>
+    </div>
+
+    <br>
+
+    <div style="background-color:  rgba(220, 230, 252, 0.85);">
+        <h3 style="text-align: center;">
+            Steps :
+        </h3>
+
+        <ul class="list-group">
+            <li class="list-group-item" style="background-color:  rgba(220, 230, 252, 0.85);" *ngFor="let step of recipe.steps">
+                {{step.stepNo}} - {{step.stepDesc}}
+            </li>
+        </ul>
+    </div>
+
+    <br>
+    <h5>Published by : {{ recipe.userName }}</h5>
+
+    <button class="btn btn-lg btn-block" style="background-color: #f88e7c;" (click)="onAddToShoppingList()">Add to Shopping List</button>
+    <br>
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-block" style="background-color: #f88e7c;" *ngIf="(recipe.userName == email) || (admin)" (click)="onEdit()">Edit</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-block" style="background-color: #f88e7c;" *ngIf="(recipe.userName == email) || (admin)" (click)="onDeleteRecipe()">Delete</button>
+        </div>
+    </div>
+</ion-card>
+
+<!-- <div class="container-fluid">
+    <div class="video-box">
+        <iframe width="100%" height="auto" [src]="recipe.video | safe: 'resourceUrl'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="textbox">
+        <h1>{{recipe.name}}</h1>
+        <p>{{recipe.description}}</p>
+        <button>Add to Shopping-List</button>
+    </div>
+</div> -->

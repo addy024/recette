@@ -1,0 +1,38 @@
+<ion-card style="text-align: center; margin:auto">
+    <ion-card-content>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <ion-row>
+                <ion-item style="width: 100%;">
+                    <ion-label position="floating">Ingredient Name : </ion-label>
+                    <ion-input readonly type="text" name="name" ngModel required></ion-input>
+                </ion-item>
+            </ion-row>
+            <ion-row>
+                <ion-item style="width: 100%;">
+                    <ion-label position="floating">Ingredient Amount : </ion-label>
+                    <ion-input type="number" name="amount" ngModel required [pattern]="'^[1-9]+[0-9]*$'"></ion-input>
+                </ion-item>
+            </ion-row>
+            <ion-row>
+                <ion-item style="width: 100%;">
+                    <ion-label position="floating">Unit : </ion-label>
+                    <ion-input readonly type="text" name="unit" ngModel required></ion-input>
+                </ion-item>
+            </ion-row>
+            <div>
+                <br>
+                <div style="display: block;">
+                    <button class="btn btn-lg btn-block" style="background-color: #f88e7c;" type="submit" *ngIf="editMode">Update</button>
+                </div>
+                <br>
+                <div style="display: block;">
+                    <button class="btn btn-lg btn-block" style="background-color: #f88e7c;" type="button" (click)="onDelete()" *ngIf="editMode">Delete</button>
+                </div>
+                <br>
+                <div style="display: block">
+                    <button class="btn btn-lg btn-block" style="background-color: #f88e7c;" type="button" (click)="onClear()">Clear</button>
+                </div>
+            </div>
+        </form>
+    </ion-card-content>
+</ion-card>

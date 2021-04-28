@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-buttons slot="start">
+            <ion-menu-button style="color: #fff;"></ion-menu-button>
+        </ion-buttons>
+        <ion-title style="color: #fff; padding-left:35%; text-align:center;">
+            Withdraw
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card padding>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <ion-item>
+                <ion-label position="floating">
+                    Bank Account No :
+                </ion-label>
+                <ion-input ngModel name="detials" required>
+                </ion-input>
+            </ion-item>
+            <br>
+            <button class="btn btn-block" [disabled]="!f.valid" style="background-color: #f88e7c" type="submit">Submit</button>
+        </form>
+    </ion-card>
+
+
+</ion-content>

@@ -1,0 +1,42 @@
+button {
+    display: block;
+    width: 260px;
+    height: 40px;
+    background: yellow;
+    border-radius: 10px;
+    margin: 14px auto;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+
+a {
+    font-size: large;
+    color: black;
+}
+
+
+/* 
+.back {
+    background-image: linear-gradient( yellow, white, white, white);
+} */
+
+.styling {
+    display: block;
+    width: 260px;
+    height: 40px;
+    background-color: black;
+    border-radius: 10px;
+    margin: 14px auto;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    border: none;
+    color: white;
+    text-align: center;
+}
+
+.new-background-color {
+    --background: #f88e7c;
+}
